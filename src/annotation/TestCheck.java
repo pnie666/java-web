@@ -26,7 +26,7 @@ public class TestCheck {
             if (method.isAnnotationPresent(Check.class)) {
                 try {
                     method.invoke(calculator);
-                } catch (Exception e) {
+                } catch (IllegalAccessException | InvocationTargetException e) {
                     number++;
                     //把异常信息存储到某个文件中
                     bufferedWriter.write(method.getName() + " 方法出现异常");
